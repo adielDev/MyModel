@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 
+import adiel.mymodel.dataactivity.TodosQueryHandler;
+
 import static adiel.mymodel.data.TodosContract.*;
 
 /**
@@ -27,8 +29,10 @@ public class MyDbHelper {
     public void deleteTodo(ContentResolver contentResolver) {
         int id = 2;
         String[] args = {String.valueOf(id)};
-        int numRows = contentResolver.delete(TodosEntry.CONTENT_URI, TodosEntry._ID + " =?", args);
-        Log.d("Delete Rows", String.valueOf(numRows));
+        TodosQueryHandler handler = new TodosQueryHandler(contentResolver);
+        handler.startDelete(1, null,
+                TodosEntry.CONTENT_URI, TodosEntry._ID + " =?", args);
+
     }
 
     public void deleteAllTodo(ContentResolver contentResolver) {
@@ -74,5 +78,19 @@ public class MyDbHelper {
         Uri uri = contentResolver.insert(TodosContract.CategoriesEntry.CONTENT_URI,
                 values);
         Log.d("MainActivity", "Inserted note " + uri);
+    }
+
+    public void createTestTodos(ContentResolver contentResolver) {
+
+        for (int i = 1; i<=20; i++) {
+            ContentValues values = new ContentValues();
+            values.put(TodosEntry.COLUMN_TEXT, "Todo Item #" + i);
+            values.put(TodosEntry.COLUMN_CATEGORY, 1);
+            values.put(TodosEntry.COLUMN_CREATED, "2016-01-02");
+            values.put(TodosEntry.COLUMN_DONE, 0);
+            TodosQueryHandler handler = new TodosQueryHandler(contentResolver);
+            handler.startInsert(1, null, TodosEntry.CONTENT_URI,
+                    values );
+        }
     }
 }

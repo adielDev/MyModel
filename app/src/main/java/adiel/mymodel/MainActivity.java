@@ -65,4 +65,9 @@ public class MainActivity extends AppCompatActivity {
     public void openAct(View view) {
         startActivity(new Intent(MainActivity.this, DataActivity.class));
     }
+
+    public void createTestTodos(View view) {
+        MyDbHelper myDbHelper = new MyDbHelper();
+        myDbHelper.createTestTodos(getContentResolver());
+    }
 }

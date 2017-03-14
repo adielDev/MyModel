@@ -11,10 +11,11 @@
     android:orientation="vertical"
     tools:context="adiel.mymodel.MainActivity">
 
-    <TextView
+    <Button
+        android:text="open act"
+        android:onClick="openAct"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:text="init db"
@@ -27,6 +28,12 @@
         android:onClick="createCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:text="create test todos"
+        android:onClick="createTestTodos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 <Button
         android:text="create todo"
         android:onClick="createTodo"
@@ -54,11 +61,7 @@
         android:onClick="updateData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-<Button
-        android:text="open act"
-        android:onClick="openAct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
 
 
 </LinearLayout>
