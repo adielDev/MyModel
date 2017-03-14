@@ -14,7 +14,7 @@ import android.util.Log;
 import static adiel.mymodel.data.TodosContract.*;
 
 
-public class TodosProvider extends ContentProvider{
+public class TodosProvider extends ContentProvider {
     //constants for the operation
     private static final int TODOS = 1;
     private static final int TODOS_ID = 2;
