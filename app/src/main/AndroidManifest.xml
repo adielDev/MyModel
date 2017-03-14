@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:exported="false"
+            android:authorities="adiel.mymodel.todos.todosprovider"
+            android:name=".data.TodosProvider"/>
+
     </application>
 
 </manifest>

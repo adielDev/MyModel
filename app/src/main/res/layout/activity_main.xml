@@ -15,4 +15,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <Button
+        android:text="init db"
+        android:onClick="initDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="create category"
+        android:onClick="createCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<Button
+        android:text="create todo"
+        android:onClick="createTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="read data"
+        android:onClick="readData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<Button
+        android:text="delete Todo"
+        android:onClick="deleteTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<Button
+        android:text="delete All Todo"
+        android:onClick="deleteAllTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+ <Button
+        android:text="update data"
+        android:onClick="updateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
 </LinearLayout>
