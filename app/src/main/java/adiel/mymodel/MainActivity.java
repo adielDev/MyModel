@@ -1,12 +1,14 @@
 package adiel.mymodel;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import adiel.mymodel.data.DatabaseHelper;
 import adiel.mymodel.data.MyDbHelper;
+import adiel.mymodel.dataactivity.DataActivity;
 
 public class MainActivity extends AppCompatActivity {
     String[] itemname ={
@@ -58,5 +60,9 @@ public class MainActivity extends AppCompatActivity {
     public void deleteAllTodo(View view) {
         MyDbHelper myDbHelper = new MyDbHelper();
         myDbHelper.deleteAllTodo(getContentResolver());
+    }
+
+    public void openAct(View view) {
+        startActivity(new Intent(MainActivity.this, DataActivity.class));
     }
 }

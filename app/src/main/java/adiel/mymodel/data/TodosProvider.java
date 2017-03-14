@@ -83,7 +83,7 @@ public class TodosProvider extends ContentProvider{
 
         }
 
-
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
         return cursor;
     }
 
@@ -115,6 +115,7 @@ public class TodosProvider extends ContentProvider{
             Log.e("Error", "insert error for URI " + uri);
             return null;
         }
+        getContext().getContentResolver().notifyChange(uri, null);
         return ContentUris.withAppendedId(uri, id);
     }
 
@@ -140,6 +141,7 @@ public class TodosProvider extends ContentProvider{
             Log.e("Error", "delete unknown URI " + uri);
             return -1;
         }
+        getContext().getContentResolver().notifyChange(uri, null);
         return id;
     }
 
