@@ -45,19 +45,10 @@ public class DataActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-        Log.d("adiel","id:"+id);
         if(args!=null) {
             Log.d("adiel", "args:" + args.toString());
         }
-        switch (id) {
-            case 770:
-                Log.d("adiel", "770");
-            break;
-            case 613:
-                Log.d("adiel", "613");
-                break;
-
-        }
+        Log.d("adiel", "onCreateLoader 770");
         String[] projection = {TodosContract.TodosEntry.COLUMN_TEXT,
                 TodosContract.TodosEntry.TABLE_NAME + "." + TodosEntry._ID,
                 TodosEntry.COLUMN_CREATED,
@@ -66,19 +57,43 @@ public class DataActivity extends AppCompatActivity implements LoaderManager.Loa
                 TodosContract.CategoriesEntry.TABLE_NAME + "." +
                         TodosContract.CategoriesEntry.COLUMN_DESCRIPTION};
 
-        return new CursorLoader(
+        CursorLoader cursorLoader = new CursorLoader(
                 this,
-                TodosContract.TodosEntry.CONTENT_URI,
+                TodosEntry.CONTENT_URI,
                 projection,
                 null, null, null);
+        switch (id) {
+            case 770:
+               return cursorLoader;
+            case 613:
+                Log.d("adiel", "onCreateLoader 613");
+                return cursorLoader;
+            default:
+                Log.d("adiel", "onCreateLoader default");
+                return null;
+
+        }
+
     }
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        adapter.swapCursor(data);
+        switch (loader.getId()){
+
+            case 770:
+                Log.d("adiel", "770 from onLoadFinished");
+                adapter.swapCursor(data);
+                break;
+            case 613:
+                Log.d("adiel", "613 from onLoadFinished");
+                break;
+
+        }
+
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
+        Log.d("adiel", "from onLoaderReset, id="+loader.getId());
         adapter.swapCursor(null);
     }
 
