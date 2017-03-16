@@ -21,7 +21,8 @@
             android:authorities="adiel.mymodel.todos.todosprovider"
             android:exported="false" />
 
-        <activity android:name=".dataactivity.DataActivity"></activity>
+        <activity android:name=".dataactivity.DataActivity" />
+        <activity android:name=".customloader.CustomLoaderAct"></activity>
     </application>
 
 </manifest>

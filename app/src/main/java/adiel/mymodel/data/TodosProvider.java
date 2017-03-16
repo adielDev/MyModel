@@ -41,7 +41,8 @@ public class TodosProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String orderBy) {
-
+        String name = Thread.currentThread().getName();
+        Log.d("adiel","query thread name :"+name);
         //get db
         SQLiteDatabase db = helper.getReadableDatabase();
         //cursor

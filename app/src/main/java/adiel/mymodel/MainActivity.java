@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import adiel.mymodel.customloader.CustomLoaderAct;
 import adiel.mymodel.data.DatabaseHelper;
 import adiel.mymodel.data.MyDbHelper;
 import adiel.mymodel.dataactivity.DataActivity;
@@ -69,5 +70,9 @@ public class MainActivity extends AppCompatActivity {
     public void createTestTodos(View view) {
         MyDbHelper myDbHelper = new MyDbHelper();
         myDbHelper.createTestTodos(getContentResolver());
+    }
+
+    public void openCustom(View view) {
+        startActivity(new Intent(MainActivity.this, CustomLoaderAct.class));
     }
 }

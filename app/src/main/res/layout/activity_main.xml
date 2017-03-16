@@ -10,12 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="adiel.mymodel.MainActivity">
-
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <Button
         android:text="open act"
         android:onClick="openAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:text="open custom"
+        android:onClick="openCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
 
     <Button
         android:text="init db"
